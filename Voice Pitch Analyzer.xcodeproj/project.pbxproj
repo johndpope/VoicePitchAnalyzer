@@ -11,10 +11,6 @@
 		41C205DF1F478E7D0029B39D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C205DE1F478E7D0029B39D /* ViewController.swift */; };
 		41C205E21F478E7D0029B39D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41C205E01F478E7D0029B39D /* Main.storyboard */; };
 		41C205E71F478E7D0029B39D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41C205E51F478E7D0029B39D /* LaunchScreen.storyboard */; };
-		41C205F31F4793300029B39D /* de.json in Resources */ = {isa = PBXBuildFile; fileRef = 41C205EF1F4793300029B39D /* de.json */; };
-		41C205F41F4793300029B39D /* en.json in Resources */ = {isa = PBXBuildFile; fileRef = 41C205F01F4793300029B39D /* en.json */; };
-		41C205F51F4793300029B39D /* it.json in Resources */ = {isa = PBXBuildFile; fileRef = 41C205F11F4793300029B39D /* it.json */; };
-		41C205F61F4793300029B39D /* pt.json in Resources */ = {isa = PBXBuildFile; fileRef = 41C205F21F4793300029B39D /* pt.json */; };
 		41C205F81F4797040029B39D /* RecordingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C205F71F4797040029B39D /* RecordingViewController.swift */; };
 		41C205FD1F481F170029B39D /* RecordingDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C205FC1F481F170029B39D /* RecordingDetailViewController.swift */; };
 		41C205FF1F481F920029B39D /* RangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C205FE1F481F920029B39D /* RangeView.swift */; };
@@ -24,16 +20,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		412584301F48C15500E1297D /* de.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = de.json; path = "Voice Pitch Analyzer/Resources/de.json"; sourceTree = "<group>"; };
+		412584311F48C15500E1297D /* it.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = it.json; path = "Voice Pitch Analyzer/Resources/it.json"; sourceTree = "<group>"; };
+		412584321F48C15500E1297D /* pt.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = pt.json; path = "Voice Pitch Analyzer/Resources/pt.json"; sourceTree = "<group>"; };
+		412584331F48C15500E1297D /* en.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en.json; path = "Voice Pitch Analyzer/Resources/en.json"; sourceTree = "<group>"; };
 		41C205D91F478E7D0029B39D /* Voice Pitch Analyzer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Voice Pitch Analyzer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		41C205DC1F478E7D0029B39D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		41C205DE1F478E7D0029B39D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		41C205E11F478E7D0029B39D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		41C205E61F478E7D0029B39D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		41C205E81F478E7D0029B39D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "Voice Pitch Analyzer/Info.plist"; sourceTree = "<group>"; };
-		41C205EF1F4793300029B39D /* de.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = de.json; sourceTree = "<group>"; };
-		41C205F01F4793300029B39D /* en.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = en.json; sourceTree = "<group>"; };
-		41C205F11F4793300029B39D /* it.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = it.json; sourceTree = "<group>"; };
-		41C205F21F4793300029B39D /* pt.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pt.json; sourceTree = "<group>"; };
 		41C205F71F4797040029B39D /* RecordingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingViewController.swift; sourceTree = "<group>"; };
 		41C205FA1F479BDA0029B39D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		41C205FC1F481F170029B39D /* RecordingDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingDetailViewController.swift; sourceTree = "<group>"; };
@@ -94,11 +90,11 @@
 		41C205EE1F47930C0029B39D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				412584301F48C15500E1297D /* de.json */,
+				412584331F48C15500E1297D /* en.json */,
+				412584311F48C15500E1297D /* it.json */,
+				412584321F48C15500E1297D /* pt.json */,
 				41C206021F484B7C0029B39D /* Assets.xcassets */,
-				41C205EF1F4793300029B39D /* de.json */,
-				41C205F01F4793300029B39D /* en.json */,
-				41C205F11F4793300029B39D /* it.json */,
-				41C205F21F4793300029B39D /* pt.json */,
 				41C205E81F478E7D0029B39D /* Info.plist */,
 			);
 			name = Resources;
@@ -186,10 +182,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				41C205F51F4793300029B39D /* it.json in Resources */,
-				41C205F41F4793300029B39D /* en.json in Resources */,
-				41C205F61F4793300029B39D /* pt.json in Resources */,
-				41C205F31F4793300029B39D /* de.json in Resources */,
 				41C205E71F478E7D0029B39D /* LaunchScreen.storyboard in Resources */,
 				41C206031F484B7C0029B39D /* Assets.xcassets in Resources */,
 				41C205E21F478E7D0029B39D /* Main.storyboard in Resources */,
@@ -392,7 +384,7 @@
 				DEVELOPMENT_TEAM = EHS3N33NZL;
 				INFOPLIST_FILE = "Voice Pitch Analyzer/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "gmbh.serioese.Voice-Pitch-Analyzer";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.carolanitz.voice-pitch-analyzer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -406,7 +398,7 @@
 				DEVELOPMENT_TEAM = EHS3N33NZL;
 				INFOPLIST_FILE = "Voice Pitch Analyzer/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "gmbh.serioese.Voice-Pitch-Analyzer";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.carolanitz.voice-pitch-analyzer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

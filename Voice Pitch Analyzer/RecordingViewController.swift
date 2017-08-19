@@ -26,7 +26,10 @@ class RecordingViewController: UIViewController, PitchEngineDelegate {
 
     func pitchEngineDidReceivePitch(_ pitchEngine: PitchEngine, pitch: Pitch)
     {
-        pitchArray.append(pitch.frequency)
+
+        if pitch.frequency < 340.0 && pitch.frequency > 65.0 {
+            pitchArray.append(pitch.frequency)
+        }
         print(pitch.frequency)
     }
 
@@ -57,7 +60,7 @@ class RecordingViewController: UIViewController, PitchEngineDelegate {
         cancelButton.setTitleColor(.black, for: .normal)
         //back to the overview
         //cancelButton.addTarget(self, action: #selector(RecordingViewController.startRecording), for: .touchUpInside)
-
+        textView.isUserInteractionEnabled = false
         [recordButton, cancelButton, textView].forEach {
             ($0 as! UIView).translatesAutoresizingMaskIntoConstraints = false
             view.addSubview($0 as! UIView)
@@ -120,7 +123,8 @@ class RecordingViewController: UIViewController, PitchEngineDelegate {
         recordButton.setTitle("Start Recording", for: .normal)
         pitchEngine.stop()
 
-        let detailViewController = RecordingDetailViewController(array:pitchArray)
+        let detailViewController = RecordingDetailViewController()
+        detailViewController.pitchArray = pitchArray
         navigationController?.pushViewController(detailViewController, animated: true)
 
     }
