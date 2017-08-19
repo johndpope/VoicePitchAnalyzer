@@ -10,6 +10,17 @@ import UIKit
 
 class RecordingDetailViewController: UIViewController {
 
+    var pitchArray:Array<Double>!
+
+    init(array:Array<Double>) {
+        pitchArray = array
+        super.init(nibName: "", bundle: nil)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         let rangeView = RangeView()

@@ -16,7 +16,6 @@
 		41C205F51F4793300029B39D /* it.json in Resources */ = {isa = PBXBuildFile; fileRef = 41C205F11F4793300029B39D /* it.json */; };
 		41C205F61F4793300029B39D /* pt.json in Resources */ = {isa = PBXBuildFile; fileRef = 41C205F21F4793300029B39D /* pt.json */; };
 		41C205F81F4797040029B39D /* RecordingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C205F71F4797040029B39D /* RecordingViewController.swift */; };
-		41C205FB1F479BDA0029B39D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41C205FA1F479BDA0029B39D /* AVFoundation.framework */; };
 		41C205FD1F481F170029B39D /* RecordingDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C205FC1F481F170029B39D /* RecordingDetailViewController.swift */; };
 		41C205FF1F481F920029B39D /* RangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C205FE1F481F920029B39D /* RangeView.swift */; };
 		41C206011F4822D20029B39D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41C206001F4822D20029B39D /* CoreGraphics.framework */; };
@@ -52,7 +51,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				41C206011F4822D20029B39D /* CoreGraphics.framework in Frameworks */,
-				41C205FB1F479BDA0029B39D /* AVFoundation.framework in Frameworks */,
 				9505091F45E18BC411AA484F /* Pods_Voice_Pitch_Analyzer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -433,6 +431,7 @@
 				41C205ED1F478E7D0029B39D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
