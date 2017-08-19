@@ -10,8 +10,18 @@
 		41C205DD1F478E7D0029B39D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C205DC1F478E7D0029B39D /* AppDelegate.swift */; };
 		41C205DF1F478E7D0029B39D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C205DE1F478E7D0029B39D /* ViewController.swift */; };
 		41C205E21F478E7D0029B39D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41C205E01F478E7D0029B39D /* Main.storyboard */; };
-		41C205E41F478E7D0029B39D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41C205E31F478E7D0029B39D /* Assets.xcassets */; };
 		41C205E71F478E7D0029B39D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41C205E51F478E7D0029B39D /* LaunchScreen.storyboard */; };
+		41C205F31F4793300029B39D /* de.json in Resources */ = {isa = PBXBuildFile; fileRef = 41C205EF1F4793300029B39D /* de.json */; };
+		41C205F41F4793300029B39D /* en.json in Resources */ = {isa = PBXBuildFile; fileRef = 41C205F01F4793300029B39D /* en.json */; };
+		41C205F51F4793300029B39D /* it.json in Resources */ = {isa = PBXBuildFile; fileRef = 41C205F11F4793300029B39D /* it.json */; };
+		41C205F61F4793300029B39D /* pt.json in Resources */ = {isa = PBXBuildFile; fileRef = 41C205F21F4793300029B39D /* pt.json */; };
+		41C205F81F4797040029B39D /* RecordingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C205F71F4797040029B39D /* RecordingViewController.swift */; };
+		41C205FB1F479BDA0029B39D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41C205FA1F479BDA0029B39D /* AVFoundation.framework */; };
+		41C205FD1F481F170029B39D /* RecordingDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C205FC1F481F170029B39D /* RecordingDetailViewController.swift */; };
+		41C205FF1F481F920029B39D /* RangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C205FE1F481F920029B39D /* RangeView.swift */; };
+		41C206011F4822D20029B39D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41C206001F4822D20029B39D /* CoreGraphics.framework */; };
+		41C206031F484B7C0029B39D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41C206021F484B7C0029B39D /* Assets.xcassets */; };
+		9505091F45E18BC411AA484F /* Pods_Voice_Pitch_Analyzer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0AD652FF89891087FE76A53 /* Pods_Voice_Pitch_Analyzer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,9 +29,21 @@
 		41C205DC1F478E7D0029B39D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		41C205DE1F478E7D0029B39D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		41C205E11F478E7D0029B39D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		41C205E31F478E7D0029B39D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		41C205E61F478E7D0029B39D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		41C205E81F478E7D0029B39D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		41C205E81F478E7D0029B39D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "Voice Pitch Analyzer/Info.plist"; sourceTree = "<group>"; };
+		41C205EF1F4793300029B39D /* de.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = de.json; sourceTree = "<group>"; };
+		41C205F01F4793300029B39D /* en.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = en.json; sourceTree = "<group>"; };
+		41C205F11F4793300029B39D /* it.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = it.json; sourceTree = "<group>"; };
+		41C205F21F4793300029B39D /* pt.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pt.json; sourceTree = "<group>"; };
+		41C205F71F4797040029B39D /* RecordingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingViewController.swift; sourceTree = "<group>"; };
+		41C205FA1F479BDA0029B39D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		41C205FC1F481F170029B39D /* RecordingDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingDetailViewController.swift; sourceTree = "<group>"; };
+		41C205FE1F481F920029B39D /* RangeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangeView.swift; sourceTree = "<group>"; };
+		41C206001F4822D20029B39D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		41C206021F484B7C0029B39D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "Voice Pitch Analyzer/Resources/Assets.xcassets"; sourceTree = "<group>"; };
+		4E8138DCC810D7C2E29B04DC /* Pods-Voice Pitch Analyzer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Voice Pitch Analyzer.release.xcconfig"; path = "Pods/Target Support Files/Pods-Voice Pitch Analyzer/Pods-Voice Pitch Analyzer.release.xcconfig"; sourceTree = "<group>"; };
+		6FAFEE120D5069C22F442CAA /* Pods-Voice Pitch Analyzer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Voice Pitch Analyzer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Voice Pitch Analyzer/Pods-Voice Pitch Analyzer.debug.xcconfig"; sourceTree = "<group>"; };
+		B0AD652FF89891087FE76A53 /* Pods_Voice_Pitch_Analyzer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Voice_Pitch_Analyzer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +51,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41C206011F4822D20029B39D /* CoreGraphics.framework in Frameworks */,
+				41C205FB1F479BDA0029B39D /* AVFoundation.framework in Frameworks */,
+				9505091F45E18BC411AA484F /* Pods_Voice_Pitch_Analyzer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,8 +63,11 @@
 		41C205D01F478E7D0029B39D = {
 			isa = PBXGroup;
 			children = (
+				41C205EE1F47930C0029B39D /* Resources */,
 				41C205DB1F478E7D0029B39D /* Voice Pitch Analyzer */,
 				41C205DA1F478E7D0029B39D /* Products */,
+				41C205F91F479BDA0029B39D /* Frameworks */,
+				8BB3F525C656EDD6C0114D7A /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,11 +85,44 @@
 				41C205DC1F478E7D0029B39D /* AppDelegate.swift */,
 				41C205DE1F478E7D0029B39D /* ViewController.swift */,
 				41C205E01F478E7D0029B39D /* Main.storyboard */,
-				41C205E31F478E7D0029B39D /* Assets.xcassets */,
 				41C205E51F478E7D0029B39D /* LaunchScreen.storyboard */,
-				41C205E81F478E7D0029B39D /* Info.plist */,
+				41C205F71F4797040029B39D /* RecordingViewController.swift */,
+				41C205FC1F481F170029B39D /* RecordingDetailViewController.swift */,
+				41C205FE1F481F920029B39D /* RangeView.swift */,
 			);
 			path = "Voice Pitch Analyzer";
+			sourceTree = "<group>";
+		};
+		41C205EE1F47930C0029B39D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				41C206021F484B7C0029B39D /* Assets.xcassets */,
+				41C205EF1F4793300029B39D /* de.json */,
+				41C205F01F4793300029B39D /* en.json */,
+				41C205F11F4793300029B39D /* it.json */,
+				41C205F21F4793300029B39D /* pt.json */,
+				41C205E81F478E7D0029B39D /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		41C205F91F479BDA0029B39D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				41C206001F4822D20029B39D /* CoreGraphics.framework */,
+				41C205FA1F479BDA0029B39D /* AVFoundation.framework */,
+				B0AD652FF89891087FE76A53 /* Pods_Voice_Pitch_Analyzer.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8BB3F525C656EDD6C0114D7A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6FAFEE120D5069C22F442CAA /* Pods-Voice Pitch Analyzer.debug.xcconfig */,
+				4E8138DCC810D7C2E29B04DC /* Pods-Voice Pitch Analyzer.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +132,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 41C205EB1F478E7D0029B39D /* Build configuration list for PBXNativeTarget "Voice Pitch Analyzer" */;
 			buildPhases = (
+				59DC4BA9FD303E7EE0057A23 /* [CP] Check Pods Manifest.lock */,
 				41C205D51F478E7D0029B39D /* Sources */,
 				41C205D61F478E7D0029B39D /* Frameworks */,
 				41C205D71F478E7D0029B39D /* Resources */,
+				EF2C5DC34665B843B2AD39A5 /* [CP] Embed Pods Frameworks */,
+				10D4BC109A59ACA401AA9E93 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -124,20 +188,83 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41C205F51F4793300029B39D /* it.json in Resources */,
+				41C205F41F4793300029B39D /* en.json in Resources */,
+				41C205F61F4793300029B39D /* pt.json in Resources */,
+				41C205F31F4793300029B39D /* de.json in Resources */,
 				41C205E71F478E7D0029B39D /* LaunchScreen.storyboard in Resources */,
-				41C205E41F478E7D0029B39D /* Assets.xcassets in Resources */,
+				41C206031F484B7C0029B39D /* Assets.xcassets in Resources */,
 				41C205E21F478E7D0029B39D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		10D4BC109A59ACA401AA9E93 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Voice Pitch Analyzer/Pods-Voice Pitch Analyzer-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		59DC4BA9FD303E7EE0057A23 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Voice Pitch Analyzer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EF2C5DC34665B843B2AD39A5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Voice Pitch Analyzer/Pods-Voice Pitch Analyzer-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Beethoven/Beethoven.framework",
+				"${BUILT_PRODUCTS_DIR}/Pitchy/Pitchy.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Beethoven.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Pitchy.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Voice Pitch Analyzer/Pods-Voice Pitch Analyzer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		41C205D51F478E7D0029B39D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41C205FF1F481F920029B39D /* RangeView.swift in Sources */,
 				41C205DF1F478E7D0029B39D /* ViewController.swift in Sources */,
+				41C205FD1F481F170029B39D /* RecordingDetailViewController.swift in Sources */,
+				41C205F81F4797040029B39D /* RecordingViewController.swift in Sources */,
 				41C205DD1F478E7D0029B39D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -261,6 +388,7 @@
 		};
 		41C205EC1F478E7D0029B39D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6FAFEE120D5069C22F442CAA /* Pods-Voice Pitch Analyzer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = EHS3N33NZL;
@@ -274,6 +402,7 @@
 		};
 		41C205ED1F478E7D0029B39D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4E8138DCC810D7C2E29B04DC /* Pods-Voice Pitch Analyzer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = EHS3N33NZL;
