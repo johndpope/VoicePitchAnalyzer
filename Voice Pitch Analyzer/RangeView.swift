@@ -88,7 +88,7 @@ class RangeView: UIView {
 
         let yourRangeStart = bounds.height * CGFloat(yourmin)
         let yourRangeEnd = bounds.height * CGFloat(yourmax)
-        let yourRange = CGRect(x:0, y:yourRangeStart, width: bounds.width, height: yourRangeEnd - yourRangeStart);
+        let yourRange = CGRect(x:bounds.width/2 - 25.0, y:yourRangeStart, width: 50, height: yourRangeEnd - yourRangeStart);
         context!.setFillColor(red: 147.0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 0.5);
         context!.fill(yourRange);
 

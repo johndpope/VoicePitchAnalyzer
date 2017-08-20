@@ -15,7 +15,9 @@ class RecordingDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if let pitchArray = pitchArray, pitchArray.count > 0 {
-            let rangeView = RangeView(min:pitchArray.min()!, max:pitchArray.max()!)
+            let minAverage = calculateMinAverage()
+            let maxAverage = calculateMaxAverage()
+            let rangeView = RangeView(min:minAverage, max:maxAverage)
 
             rangeView.translatesAutoresizingMaskIntoConstraints = false
 
@@ -30,5 +32,34 @@ class RecordingDetailViewController: UIViewController {
 
             NSLayoutConstraint.activate(constraints)
         }
+    }
+
+    func calculateMinAverage() -> Double {
+        var minsorted = pitchArray
+        minsorted = minsorted!.sorted()
+        let elements = minsorted!.count / 3
+        minsorted = Array(minsorted!.prefix(elements))
+
+        return calculateAverage(pitches:minsorted!)
+    }
+
+    func calculateMaxAverage() -> Double {
+        var maxSorted = pitchArray
+        maxSorted = maxSorted!.sorted()
+        let elements = maxSorted!.count / 3
+        maxSorted = Array(maxSorted!.suffix(elements))
+
+        return calculateAverage(pitches:maxSorted!)
+    }
+
+    func  calculateAverage(pitches:Array<Double>) -> Double {
+        var sum = 0.0;
+        if (pitches.count != 0) {
+            for pitch in pitches {
+                sum += pitch;
+            }
+            return sum / Double(pitches.count);
+        }
+        return sum;
     }
 }
