@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		415E53F01F498A93009E33BC /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415E53EF1F498A93009E33BC /* UIColorExtension.swift */; };
+		415E53F11F498F31009E33BC /* en.json in Resources */ = {isa = PBXBuildFile; fileRef = 412584331F48C15500E1297D /* en.json */; };
+		415E53F21F498F37009E33BC /* de.json in Resources */ = {isa = PBXBuildFile; fileRef = 412584301F48C15500E1297D /* de.json */; };
+		415E53F31F498F37009E33BC /* it.json in Resources */ = {isa = PBXBuildFile; fileRef = 412584311F48C15500E1297D /* it.json */; };
+		415E53F41F498F37009E33BC /* pt.json in Resources */ = {isa = PBXBuildFile; fileRef = 412584321F48C15500E1297D /* pt.json */; };
 		41C205DD1F478E7D0029B39D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C205DC1F478E7D0029B39D /* AppDelegate.swift */; };
 		41C205DF1F478E7D0029B39D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C205DE1F478E7D0029B39D /* ViewController.swift */; };
 		41C205E21F478E7D0029B39D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41C205E01F478E7D0029B39D /* Main.storyboard */; };
@@ -199,11 +203,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				415E53F11F498F31009E33BC /* en.json in Resources */,
 				41E5E41E1F496E9B00B191F5 /* Localizable.strings in Resources */,
 				41C205E71F478E7D0029B39D /* LaunchScreen.storyboard in Resources */,
 				41E5E4141F496A9900B191F5 /* infoPlist.strings in Resources */,
+				415E53F31F498F37009E33BC /* it.json in Resources */,
 				41C206031F484B7C0029B39D /* Assets.xcassets in Resources */,
+				415E53F41F498F37009E33BC /* pt.json in Resources */,
 				41C205E21F478E7D0029B39D /* Main.storyboard in Resources */,
+				415E53F21F498F37009E33BC /* de.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
