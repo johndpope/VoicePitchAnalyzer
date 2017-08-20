@@ -14,7 +14,7 @@ class RecordingDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let pitchArray = pitchArray {
+        if let pitchArray = pitchArray, pitchArray.count > 0 {
             let rangeView = RangeView(min:pitchArray.min()!, max:pitchArray.max()!)
 
             rangeView.translatesAutoresizingMaskIntoConstraints = false

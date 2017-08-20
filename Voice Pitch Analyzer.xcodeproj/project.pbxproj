@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		415E53ED1F498769009E33BC /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415E53EC1F498769009E33BC /* Appearance.swift */; };
 		41C205DD1F478E7D0029B39D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C205DC1F478E7D0029B39D /* AppDelegate.swift */; };
 		41C205DF1F478E7D0029B39D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C205DE1F478E7D0029B39D /* ViewController.swift */; };
 		41C205E21F478E7D0029B39D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41C205E01F478E7D0029B39D /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 		41C206031F484B7C0029B39D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41C206021F484B7C0029B39D /* Assets.xcassets */; };
 		41E5E4141F496A9900B191F5 /* infoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 41E5E4161F496A9900B191F5 /* infoPlist.strings */; };
 		41E5E41E1F496E9B00B191F5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 41E5E41C1F496B4A00B191F5 /* Localizable.strings */; };
+		41E5E4201F49848600B191F5 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E5E41F1F49848600B191F5 /* AboutViewController.swift */; };
 		9505091F45E18BC411AA484F /* Pods_Voice_Pitch_Analyzer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0AD652FF89891087FE76A53 /* Pods_Voice_Pitch_Analyzer.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +28,7 @@
 		412584311F48C15500E1297D /* it.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = it.json; path = "Voice Pitch Analyzer/Resources/it.json"; sourceTree = "<group>"; };
 		412584321F48C15500E1297D /* pt.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = pt.json; path = "Voice Pitch Analyzer/Resources/pt.json"; sourceTree = "<group>"; };
 		412584331F48C15500E1297D /* en.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en.json; path = "Voice Pitch Analyzer/Resources/en.json"; sourceTree = "<group>"; };
+		415E53EC1F498769009E33BC /* Appearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
 		41C205D91F478E7D0029B39D /* Voice Pitch Analyzer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Voice Pitch Analyzer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		41C205DC1F478E7D0029B39D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		41C205DE1F478E7D0029B39D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -44,6 +47,7 @@
 		41E5E4191F496AB500B191F5 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/infoPlist.strings; sourceTree = "<group>"; };
 		41E5E41B1F496B4A00B191F5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		41E5E41D1F496B8300B191F5 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		41E5E41F1F49848600B191F5 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		4E8138DCC810D7C2E29B04DC /* Pods-Voice Pitch Analyzer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Voice Pitch Analyzer.release.xcconfig"; path = "Pods/Target Support Files/Pods-Voice Pitch Analyzer/Pods-Voice Pitch Analyzer.release.xcconfig"; sourceTree = "<group>"; };
 		6FAFEE120D5069C22F442CAA /* Pods-Voice Pitch Analyzer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Voice Pitch Analyzer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Voice Pitch Analyzer/Pods-Voice Pitch Analyzer.debug.xcconfig"; sourceTree = "<group>"; };
 		B0AD652FF89891087FE76A53 /* Pods_Voice_Pitch_Analyzer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Voice_Pitch_Analyzer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,6 +95,8 @@
 				41C205F71F4797040029B39D /* RecordingViewController.swift */,
 				41C205FC1F481F170029B39D /* RecordingDetailViewController.swift */,
 				41C205FE1F481F920029B39D /* RangeView.swift */,
+				41E5E41F1F49848600B191F5 /* AboutViewController.swift */,
+				415E53EC1F498769009E33BC /* Appearance.swift */,
 			);
 			path = "Voice Pitch Analyzer";
 			sourceTree = "<group>";
@@ -264,9 +270,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41E5E4201F49848600B191F5 /* AboutViewController.swift in Sources */,
 				41C205FF1F481F920029B39D /* RangeView.swift in Sources */,
 				41C205DF1F478E7D0029B39D /* ViewController.swift in Sources */,
 				41C205FD1F481F170029B39D /* RecordingDetailViewController.swift in Sources */,
+				415E53ED1F498769009E33BC /* Appearance.swift in Sources */,
 				41C205F81F4797040029B39D /* RecordingViewController.swift in Sources */,
 				41C205DD1F478E7D0029B39D /* AppDelegate.swift in Sources */,
 			);

@@ -14,6 +14,7 @@ class RecordingViewController: UIViewController, PitchEngineDelegate {
 
     var recordButton: UIButton
     var cancelButton: UIButton
+    var aboutButton:UIButton
     var pitchArray:Array<Double> = Array()
     var textView: UITextView
     let firstAppearanceKey = "firstAppearance"
@@ -24,23 +25,6 @@ class RecordingViewController: UIViewController, PitchEngineDelegate {
 
         return pitchEngine
         }()
-
-    func pitchEngineDidReceivePitch(_ pitchEngine: PitchEngine, pitch: Pitch)
-    {
-
-        if pitch.frequency < 340.0 && pitch.frequency > 65.0 {
-            pitchArray.append(pitch.frequency)
-        }
-        print(pitch.frequency)
-    }
-
-    func pitchEngineDidReceiveError(_ pitchEngine: PitchEngine, error: Error){
-        //  print(error)
-    }
-
-    func pitchEngineWentBelowLevelThreshold(_ pitchEngine: PitchEngine){
-        
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,7 +45,9 @@ class RecordingViewController: UIViewController, PitchEngineDelegate {
 
     func setupSubviews(){
         view.backgroundColor = .white
-
+        navigationItem.title = NSLocalizedString("Recording", comment: "")
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: aboutButton)
+        aboutButton.addTarget(self, action: #selector(RecordingViewController.showAboutScreen), for: .touchUpInside)
         recordButton.setTitle(NSLocalizedString("Record", comment: ""), for: .normal)
         recordButton.addTarget(self, action: #selector(RecordingViewController.startRecording), for: .touchUpInside)
         recordButton.titleLabel?.textAlignment = .center
@@ -78,13 +64,11 @@ class RecordingViewController: UIViewController, PitchEngineDelegate {
             ($0 as! UIView).translatesAutoresizingMaskIntoConstraints = false
             view.addSubview($0 as! UIView)
         }
-
-        textView.text = "Erstes Kapitel\n\n Das Atelier schwamm in einem starken Rosendufte, und wenn der leichte Sommerwind die B\u{00e4}ume im Garten wiegte, so flo\u{00df} durch die offene T\u{00fc}r der schwere Geruch des Flieders herein oder der zartere Duft des Rotdorns. Aus der Ecke seines Diwans mit persischen Satteltaschen, auf dem Lord Henry Wotton lag und wie gew\u{00f6}hnlich unz\u{00e4}hlige Zigaretten rauchte, konnte er gerade noch den Schimmer der honigs\u{00fc}\u{00df}en und honigfarbigen Bl\u{00fc}ten eines Goldregenstrauches wahrnehmen, dessen zitternde Zweige nur seufzend die Last einer so flammenden Sch\u{00f6}nheit zu tragen schienen, und dann und wann huschten die phantastischen Schatten vorbeifliegender V\u{00f6}gel \u{00fc}ber die langen bastseidenen Vorh\u{00e4}nge, die vor das gro\u{00df}e Fenster gezogen waren. Das gab einen Augenblick lang eine Art japanischer Stimmung und lie\u{00df} den Lord an die bleichen, nephritgelben Maler der Stadt Tokio denken, die mit Hilfe einer Kunst, die notwendigerweise erstarrt genannt werden mu\u{00df}, das Gef\u{00fc}hl von Schnelligkeit und Bewegung hervorzubringen suchen. Das tiefe Gesumme der Bienen, die ihren zweifelnden Flug durch das hohe, ungem\u{00e4}hte Gras nahmen oder mit eint\u{00f6}niger Z\u{00e4}higkeit um die bestaubten Goldtrichter des wuchernden Gei\u{00df}blattes kreisten, lie\u{00df} die Stille noch dr\u{00fc}ckender scheinen."
-
+        fillText()
     }
 
     func fillText(){
-
+         textView.text = "Erstes Kapitel\n\n Das Atelier schwamm in einem starken Rosendufte, und wenn der leichte Sommerwind die B\u{00e4}ume im Garten wiegte, so flo\u{00df} durch die offene T\u{00fc}r der schwere Geruch des Flieders herein oder der zartere Duft des Rotdorns. Aus der Ecke seines Diwans mit persischen Satteltaschen, auf dem Lord Henry Wotton lag und wie gew\u{00f6}hnlich unz\u{00e4}hlige Zigaretten rauchte, konnte er gerade noch den Schimmer der honigs\u{00fc}\u{00df}en und honigfarbigen Bl\u{00fc}ten eines Goldregenstrauches wahrnehmen, dessen zitternde Zweige nur seufzend die Last einer so flammenden Sch\u{00f6}nheit zu tragen schienen, und dann und wann huschten die phantastischen Schatten vorbeifliegender V\u{00f6}gel \u{00fc}ber die langen bastseidenen Vorh\u{00e4}nge, die vor das gro\u{00df}e Fenster gezogen waren. Das gab einen Augenblick lang eine Art japanischer Stimmung und lie\u{00df} den Lord an die bleichen, nephritgelben Maler der Stadt Tokio denken, die mit Hilfe einer Kunst, die notwendigerweise erstarrt genannt werden mu\u{00df}, das Gef\u{00fc}hl von Schnelligkeit und Bewegung hervorzubringen suchen. Das tiefe Gesumme der Bienen, die ihren zweifelnden Flug durch das hohe, ungem\u{00e4}hte Gras nahmen oder mit eint\u{00f6}niger Z\u{00e4}higkeit um die bestaubten Goldtrichter des wuchernden Gei\u{00df}blattes kreisten, lie\u{00df} die Stille noch dr\u{00fc}ckender scheinen."
     }
 
     func setupConstraints()
@@ -104,16 +88,12 @@ class RecordingViewController: UIViewController, PitchEngineDelegate {
         NSLayoutConstraint.activate(constraints)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
 
         recordButton = UIButton(type: .custom)
         cancelButton = UIButton(type: .custom)
         textView = UITextView()
+        aboutButton = UIButton(type: UIButtonType.infoDark)
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
     
@@ -139,7 +119,29 @@ class RecordingViewController: UIViewController, PitchEngineDelegate {
         let detailViewController = RecordingDetailViewController()
         detailViewController.pitchArray = pitchArray
         navigationController?.pushViewController(detailViewController, animated: true)
+    }
 
+    func showAboutScreen() {
+        let aboutvc = AboutViewController()
+        let navigationvc = UINavigationController(rootViewController: aboutvc)
+        present(navigationvc, animated: true, completion: nil)
+    }
+
+    // MARK:PitchEngineDelegate
+    func pitchEngineDidReceivePitch(_ pitchEngine: PitchEngine, pitch: Pitch)
+    {
+        if pitch.frequency < 340.0 && pitch.frequency > 65.0 {
+            pitchArray.append(pitch.frequency)
+        }
+        print(pitch.frequency)
+    }
+
+    func pitchEngineDidReceiveError(_ pitchEngine: PitchEngine, error: Error){
+        //  print(error)
+    }
+
+    func pitchEngineWentBelowLevelThreshold(_ pitchEngine: PitchEngine){
+        //intentionally left empty
     }
 
 }
