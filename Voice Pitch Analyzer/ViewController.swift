@@ -22,9 +22,7 @@ class ViewController: UIViewController {
     }
 
     func showNextScreen(){
-        let recordingViewController = RecordingViewController()
-        let navController = UINavigationController(rootViewController: recordingViewController)
-        present(navController, animated: true){}
+        dismiss(animated: true) {}
     }
 
 

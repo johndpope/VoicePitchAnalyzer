@@ -43,8 +43,15 @@ class RecordingViewController: UIViewController, PitchEngineDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        presentIntroIfNeeded()
         setupSubviews()
         setupConstraints()
+    }
+
+    func presentIntroIfNeeded(){
+        let mainsb = UIStoryboard(name: "Main", bundle: nil)
+        let introScreen = mainsb.instantiateInitialViewController()
+        present(introScreen!, animated: true) {}
     }
 
     func setupSubviews(){

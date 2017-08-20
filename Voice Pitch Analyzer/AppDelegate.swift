@@ -15,6 +15,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+
+        let recordingViewController = RecordingViewController()
+        let navController = UINavigationController(rootViewController: recordingViewController)
+
+        window?.rootViewController = navController
+        window?.makeKeyAndVisible()
         // Override point for customization after application launch.
         return true
     }
