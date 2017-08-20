@@ -13,7 +13,6 @@ import Pitchy
 class RecordingViewController: UIViewController, PitchEngineDelegate {
 
     var recordButton: UIButton
-    var cancelButton: UIButton
     var aboutButton:UIButton
     var pitchArray:Array<Double> = Array()
     var textView: UITextView
@@ -51,16 +50,14 @@ class RecordingViewController: UIViewController, PitchEngineDelegate {
         recordButton.setTitle(NSLocalizedString("Record", comment: ""), for: .normal)
         recordButton.addTarget(self, action: #selector(RecordingViewController.startRecording), for: .touchUpInside)
         recordButton.titleLabel?.textAlignment = .center
-        recordButton.setTitleColor(.black, for: .normal)
+        recordButton.setBackgroundImage(imageFromColor(color:.vpapurple), for: .normal)
+        recordButton.setTitleColor(.white, for: .normal)
+        recordButton.layer.cornerRadius = 10
+        recordButton.layer.masksToBounds = true
 
-        cancelButton.setTitle(NSLocalizedString("Cancel", comment: ""), for: .normal)
-        cancelButton.titleLabel?.textAlignment = .center
-        cancelButton.setTitleColor(.black, for: .normal)
-        //back to the overview
-        //cancelButton.addTarget(self, action: #selector(RecordingViewController.startRecording), for: .touchUpInside)
         textView.font = UIFont.systemFont(ofSize: 22)
         textView.isEditable = false
-        [recordButton, cancelButton, textView].forEach {
+        [recordButton, textView].forEach {
             ($0 as! UIView).translatesAutoresizingMaskIntoConstraints = false
             view.addSubview($0 as! UIView)
         }
@@ -103,12 +100,10 @@ class RecordingViewController: UIViewController, PitchEngineDelegate {
             textView.leftAnchor.constraint(equalTo: view.leftAnchor),
             textView.rightAnchor.constraint(equalTo: view.rightAnchor),
             textView.bottomAnchor.constraint(equalTo: recordButton.topAnchor),
-            recordButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -10),
+            recordButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant:-8),
+            recordButton.heightAnchor.constraint(equalToConstant:44),
             recordButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -10),
-            recordButton.leftAnchor.constraint(equalTo: cancelButton.rightAnchor),
-            cancelButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 10),
-            cancelButton.rightAnchor.constraint(equalTo: view.centerXAnchor),
-            cancelButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -10),
+            recordButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant:10),
         ]
         NSLayoutConstraint.activate(constraints)
     }
@@ -116,7 +111,6 @@ class RecordingViewController: UIViewController, PitchEngineDelegate {
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
 
         recordButton = UIButton(type: .custom)
-        cancelButton = UIButton(type: .custom)
         textView = UITextView()
         aboutButton = UIButton(type: UIButtonType.infoDark)
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -169,4 +163,14 @@ class RecordingViewController: UIViewController, PitchEngineDelegate {
         //intentionally left empty
     }
 
+    func imageFromColor(color:UIColor) -> UIImage {
+        let rect = CGRect(x: 0, y: 0, width: 1, height: 1)
+        UIGraphicsBeginImageContext(rect.size)
+        let context = UIGraphicsGetCurrentContext()
+        context!.setFillColor(color.cgColor)
+        context!.fill(rect)
+        let img = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return img!
+    }
 }
