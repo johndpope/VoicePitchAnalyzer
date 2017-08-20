@@ -16,6 +16,7 @@ class RecordingViewController: UIViewController, PitchEngineDelegate {
     var cancelButton: UIButton
     var pitchArray:Array<Double> = Array()
     var textView: UITextView
+    let firstAppearanceKey = "firstAppearance"
 
     lazy var pitchEngine: PitchEngine = { [weak self] in
         var config = Config(bufferSize: 4096, estimationStrategy: .yin)
@@ -49,9 +50,13 @@ class RecordingViewController: UIViewController, PitchEngineDelegate {
     }
 
     func presentIntroIfNeeded(){
-        let mainsb = UIStoryboard(name: "Main", bundle: nil)
-        let introScreen = mainsb.instantiateInitialViewController()
-        present(introScreen!, animated: true) {}
+        let firstTime = UserDefaults.standard.bool(forKey: firstAppearanceKey)
+        if !firstTime {
+            let mainsb = UIStoryboard(name: "Main", bundle: nil)
+            let introScreen = mainsb.instantiateInitialViewController()
+            present(introScreen!, animated: true) {}
+            UserDefaults.standard.set(true, forKey: firstAppearanceKey)
+        }
     }
 
     func setupSubviews(){
