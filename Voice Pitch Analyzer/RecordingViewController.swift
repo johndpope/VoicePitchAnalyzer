@@ -60,7 +60,8 @@ class RecordingViewController: UIViewController, PitchEngineDelegate {
         cancelButton.setTitleColor(.black, for: .normal)
         //back to the overview
         //cancelButton.addTarget(self, action: #selector(RecordingViewController.startRecording), for: .touchUpInside)
-        textView.isUserInteractionEnabled = false
+        textView.font = UIFont.systemFont(ofSize: 22)
+        textView.isEditable = false
         [recordButton, cancelButton, textView].forEach {
             ($0 as! UIView).translatesAutoresizingMaskIntoConstraints = false
             view.addSubview($0 as! UIView)
