@@ -20,7 +20,7 @@ class RangeView: UIView {
 
         super.init(frame: .zero)
         let maleLabel = UILabel(frame: .zero)
-        maleLabel.text = "Male\nRange"
+        maleLabel.text = NSLocalizedString("Male\nRange", comment: "")
         maleLabel.numberOfLines = 0
         maleLabel.textAlignment = .right
         maleLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -28,7 +28,7 @@ class RangeView: UIView {
         self.addSubview(maleLabel)
 
         let androgynousLabel = UILabel(frame: .zero)
-        androgynousLabel.text = "Androgynous\nRange"
+        androgynousLabel.text = NSLocalizedString("Androgynous\nRange", comment: "")
         androgynousLabel.numberOfLines = 0
         androgynousLabel.textAlignment = .right
         androgynousLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -36,7 +36,7 @@ class RangeView: UIView {
         self.addSubview(androgynousLabel)
 
         let femaleLabel = UILabel(frame: .zero)
-        femaleLabel.text = "Female\nRange"
+        femaleLabel.text = NSLocalizedString("Female\nRange", comment: "")
         femaleLabel.numberOfLines = 0
         femaleLabel.textAlignment = .right
         femaleLabel.translatesAutoresizingMaskIntoConstraints = false

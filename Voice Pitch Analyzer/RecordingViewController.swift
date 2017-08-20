@@ -50,12 +50,12 @@ class RecordingViewController: UIViewController, PitchEngineDelegate {
     func setupSubviews(){
         view.backgroundColor = .white
 
-        recordButton.setTitle("Record", for: .normal)
+        recordButton.setTitle(NSLocalizedString("Record", comment: ""), for: .normal)
         recordButton.addTarget(self, action: #selector(RecordingViewController.startRecording), for: .touchUpInside)
         recordButton.titleLabel?.textAlignment = .center
         recordButton.setTitleColor(.black, for: .normal)
 
-        cancelButton.setTitle("Cancel", for: .normal)
+        cancelButton.setTitle(NSLocalizedString("Cancel", comment: ""), for: .normal)
         cancelButton.titleLabel?.textAlignment = .center
         cancelButton.setTitleColor(.black, for: .normal)
         //back to the overview
@@ -112,7 +112,7 @@ class RecordingViewController: UIViewController, PitchEngineDelegate {
 
         recordButton.removeTarget(self, action: nil, for: .touchUpInside)
         recordButton.addTarget(self, action: #selector(RecordingViewController.stopRecording), for: .touchUpInside)
-        recordButton.setTitle("Stop", for: .normal)
+        recordButton.setTitle(NSLocalizedString("Stop", comment: ""), for: .normal)
 
         pitchEngine.start()
     }
@@ -120,7 +120,7 @@ class RecordingViewController: UIViewController, PitchEngineDelegate {
     func stopRecording() {
         recordButton.removeTarget(self, action: nil, for: .touchUpInside)
         recordButton.addTarget(self, action: #selector(RecordingViewController.startRecording), for: .touchUpInside)
-        recordButton.setTitle("Start Recording", for: .normal)
+        recordButton.setTitle(NSLocalizedString("Record", comment: ""), for: .normal)
         pitchEngine.stop()
 
         let detailViewController = RecordingDetailViewController()
