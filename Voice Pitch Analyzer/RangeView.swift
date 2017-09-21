@@ -92,5 +92,12 @@ class RangeView: UIView {
         context!.setFillColor(red: 147.0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 0.5);
         context!.fill(yourRange);
 
+
+        let middleOfRange = yourRangeStart + (yourRangeEnd - yourRangeStart)/2
+        let middleOfyourRange = CGRect(x:bounds.width/2 - 25.0, y:middleOfRange, width: 50, height: 2);
+        context!.setFillColor(red: 147.0/255.0, green: 147/255.0, blue: 147/255.0, alpha: 1);
+        context!.fill(middleOfyourRange);
+
+
     }
 }

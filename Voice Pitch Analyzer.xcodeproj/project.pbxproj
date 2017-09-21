@@ -21,6 +21,7 @@
 		41C205FF1F481F920029B39D /* RangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C205FE1F481F920029B39D /* RangeView.swift */; };
 		41C206011F4822D20029B39D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41C206001F4822D20029B39D /* CoreGraphics.framework */; };
 		41C206031F484B7C0029B39D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41C206021F484B7C0029B39D /* Assets.xcassets */; };
+		41CDE7E81F4CEE9F006CE08B /* NSAttributtedString+Link.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CDE7E71F4CEE9F006CE08B /* NSAttributtedString+Link.swift */; };
 		41E5E4141F496A9900B191F5 /* infoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 41E5E4161F496A9900B191F5 /* infoPlist.strings */; };
 		41E5E41E1F496E9B00B191F5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 41E5E41C1F496B4A00B191F5 /* Localizable.strings */; };
 		41E5E4201F49848600B191F5 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E5E41F1F49848600B191F5 /* AboutViewController.swift */; };
@@ -45,6 +46,7 @@
 		41C205FE1F481F920029B39D /* RangeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangeView.swift; sourceTree = "<group>"; };
 		41C206001F4822D20029B39D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		41C206021F484B7C0029B39D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "Voice Pitch Analyzer/Resources/Assets.xcassets"; sourceTree = "<group>"; };
+		41CDE7E71F4CEE9F006CE08B /* NSAttributtedString+Link.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributtedString+Link.swift"; sourceTree = "<group>"; };
 		41E5E4151F496A9900B191F5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/infoPlist.strings; sourceTree = "<group>"; };
 		41E5E4171F496AB500B191F5 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
 		41E5E4181F496AB500B191F5 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 				41C205FE1F481F920029B39D /* RangeView.swift */,
 				41E5E41F1F49848600B191F5 /* AboutViewController.swift */,
 				415E53EF1F498A93009E33BC /* UIColorExtension.swift */,
+				41CDE7E71F4CEE9F006CE08B /* NSAttributtedString+Link.swift */,
 			);
 			path = "Voice Pitch Analyzer";
 			sourceTree = "<group>";
@@ -248,7 +251,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		EF2C5DC34665B843B2AD39A5 /* [CP] Embed Pods Frameworks */ = {
@@ -284,6 +287,7 @@
 				41C205DF1F478E7D0029B39D /* ViewController.swift in Sources */,
 				41C205FD1F481F170029B39D /* RecordingDetailViewController.swift in Sources */,
 				41C205F81F4797040029B39D /* RecordingViewController.swift in Sources */,
+				41CDE7E81F4CEE9F006CE08B /* NSAttributtedString+Link.swift in Sources */,
 				41C205DD1F478E7D0029B39D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

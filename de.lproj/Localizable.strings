@@ -1,5 +1,5 @@
 
-"Welcome" = "Hallo!\n\nUm es richtig zu analysieren brauchen wir eine Audioaufnahme deiner Stimme von einer Minute. Zu diesem Zweck geben wir dir einen Text in dieser ungefähren Länge. Natürlich kannst du auch etwas anderes sagen so lange es in deiner natürlichen Stimme ist.";
+"Welcome" = "Hallo!\n\nUm deine Stimmlage richtig zu analysieren brauchen wir eine Audioaufnahme deiner Stimme von einer Minute. Zu diesem Zweck geben wir dir einen Text in dieser ungefähren Länge. Natürlich kannst du auch etwas anderes sagen so lange es in deiner natürlichen Stimme ist.";
 "Next" = "Weiter";
 "Record" = "Aufnehmen";
 "Caccel" = "Abbrechen";
@@ -9,3 +9,6 @@
 "Androgynous\nRange" = "Androgyne\nSpanne";
 "Recording" = "Aufnehmen";
 "About" = "Über";
+"AboutText" = "Voice Pitch Analyzer\nVersion:%@\n\n Basierend auf der Version die hier gefunden werden kann https://github.com/purrprogramming/voice-pitch-analyzer/ \n\nCopyright © Carola Nitz";
+"No Samples" = "Nicht genügend Aufnahmen";
+"No Samples description" = "Wir konnten nicht lange genug aufnehmen. Bitte versuche es noch einmal";

@@ -23,7 +23,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
 
         setupAppearance()
-        // Override point for customization after application launch.
         return true
     }
 

@@ -12,10 +12,11 @@ import Pitchy
 
 class RecordingViewController: UIViewController, PitchEngineDelegate {
 
-    var recordButton: UIButton
-    var aboutButton:UIButton
+    var recordButton = UIButton(type: .custom)
+    var textView = UITextView()
+    var aboutButton = UIButton(type: UIButtonType.infoDark)
     var pitchArray:Array<Double> = Array()
-    var textView: UITextView
+
     let firstAppearanceKey = "firstAppearance"
 
     lazy var pitchEngine: PitchEngine = { [weak self] in
@@ -65,7 +66,6 @@ class RecordingViewController: UIViewController, PitchEngineDelegate {
     }
 
     func fillText(){
-
         do {
             var lang = NSLocale.preferredLanguages.first
             lang = lang!.substring(to: lang!.index(lang!.startIndex, offsetBy: 2))
@@ -78,10 +78,16 @@ class RecordingViewController: UIViewController, PitchEngineDelegate {
                 if let object = json as? [String: Any] {
                     // json is a dictionary
                     let texts = object["texts"] as? [String : Any]
-                    var dict = texts![lang!] as! [String]
-                    let randomNumber = Int(arc4random() % 457)
-                    textView.text = dict[randomNumber]
-                    print(object)
+                    if let texts = texts {
+                        var dict = texts[lang!] as! [String]
+                        let randomNumber = Int(arc4random() % 457)
+                        if randomNumber < dict.count {
+                            textView.text = dict[randomNumber]
+                        }
+                        print(object)
+                    } else {
+                        print("no text object in json")
+                    }
                 } else {
                     print("JSON is invalid")
                 }
@@ -95,7 +101,7 @@ class RecordingViewController: UIViewController, PitchEngineDelegate {
 
     func setupConstraints()
     {
-        let constraints = [
+        NSLayoutConstraint.activate( [
             textView.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor),
             textView.leftAnchor.constraint(equalTo: view.leftAnchor),
             textView.rightAnchor.constraint(equalTo: view.rightAnchor),
@@ -104,20 +110,7 @@ class RecordingViewController: UIViewController, PitchEngineDelegate {
             recordButton.heightAnchor.constraint(equalToConstant:44),
             recordButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -10),
             recordButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant:10),
-        ]
-        NSLayoutConstraint.activate(constraints)
-    }
-
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-
-        recordButton = UIButton(type: .custom)
-        textView = UITextView()
-        aboutButton = UIButton(type: UIButtonType.infoDark)
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        ])
     }
 
     func startRecording() {
@@ -129,15 +122,23 @@ class RecordingViewController: UIViewController, PitchEngineDelegate {
         pitchEngine.start()
     }
 
+   
     func stopRecording() {
         recordButton.removeTarget(self, action: nil, for: .touchUpInside)
         recordButton.addTarget(self, action: #selector(RecordingViewController.startRecording), for: .touchUpInside)
         recordButton.setTitle(NSLocalizedString("Record", comment: ""), for: .normal)
         pitchEngine.stop()
-
-        let detailViewController = RecordingDetailViewController()
-        detailViewController.pitchArray = pitchArray
-        navigationController?.pushViewController(detailViewController, animated: true)
+        if ( pitchArray.count > 0) {
+            let detailViewController = RecordingDetailViewController()
+            detailViewController.pitchArray = pitchArray
+            navigationController?.pushViewController(detailViewController, animated: true)
+        } else {
+            let alert = UIAlertController(title: NSLocalizedString("No Samples", comment:""), message: NSLocalizedString("No Samples description", comment:""), preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+                self.dismiss(animated: true, completion: nil)
+            }))
+            self.present(alert, animated: true, completion: nil)
+        }
     }
 
     func showAboutScreen() {
@@ -149,10 +150,10 @@ class RecordingViewController: UIViewController, PitchEngineDelegate {
     // MARK:PitchEngineDelegate
     func pitchEngineDidReceivePitch(_ pitchEngine: PitchEngine, pitch: Pitch)
     {
+        //filtering the too high and too low values out
         if pitch.frequency < 340.0 && pitch.frequency > 65.0 {
             pitchArray.append(pitch.frequency)
         }
-        print(pitch.frequency)
     }
 
     func pitchEngineDidReceiveError(_ pitchEngine: PitchEngine, error: Error){
