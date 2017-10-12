@@ -17,8 +17,15 @@ class RangeView: UIView {
     init(min:Double, max:Double) {
         self.min = min
         self.max = max
-
         super.init(frame: .zero)
+        setupSubviews()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    func setupSubviews(){
         let maleLabel = UILabel(frame: .zero)
         maleLabel.text = NSLocalizedString("Male\nRange", comment: "")
         maleLabel.numberOfLines = 0
@@ -42,20 +49,15 @@ class RangeView: UIView {
         femaleLabel.translatesAutoresizingMaskIntoConstraints = false
 
         self.addSubview(femaleLabel)
-        
-        let constraints = [
+
+        NSLayoutConstraint.activate([
             femaleLabel.rightAnchor.constraint(equalTo: self.rightAnchor),
             femaleLabel.topAnchor.constraint(equalTo: self.topAnchor),
             maleLabel.rightAnchor.constraint(equalTo: self.rightAnchor),
             maleLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor),
             androgynousLabel.rightAnchor.constraint(equalTo: self.rightAnchor),
             androgynousLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            ]
-        NSLayoutConstraint.activate(constraints)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+            ])
     }
 
     override func draw(_ rect: CGRect) {
@@ -91,7 +93,6 @@ class RangeView: UIView {
         let yourRange = CGRect(x:bounds.width/2 - 25.0, y:yourRangeStart, width: 50, height: yourRangeEnd - yourRangeStart);
         context!.setFillColor(red: 147.0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 0.5);
         context!.fill(yourRange);
-
 
         let middleOfRange = yourRangeStart + (yourRangeEnd - yourRangeStart)/2
         let middleOfyourRange = CGRect(x:bounds.width/2 - 25.0, y:middleOfRange, width: 50, height: 2);

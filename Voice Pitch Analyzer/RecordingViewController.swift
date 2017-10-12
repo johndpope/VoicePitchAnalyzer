@@ -48,6 +48,7 @@ class RecordingViewController: UIViewController, PitchEngineDelegate {
         navigationItem.title = NSLocalizedString("Recording", comment: "")
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: aboutButton)
         aboutButton.addTarget(self, action: #selector(RecordingViewController.showAboutScreen), for: .touchUpInside)
+
         recordButton.setTitle(NSLocalizedString("Record", comment: ""), for: .normal)
         recordButton.addTarget(self, action: #selector(RecordingViewController.startRecording), for: .touchUpInside)
         recordButton.titleLabel?.textAlignment = .center
@@ -63,6 +64,13 @@ class RecordingViewController: UIViewController, PitchEngineDelegate {
             view.addSubview($0 as! UIView)
         }
         fillText()
+        var topOffset = navigationController?.navigationBar.bounds.height ?? 0
+        topOffset += UIApplication.shared.statusBarFrame.height
+        textView.contentOffset = CGPoint(x: 0, y: -topOffset)
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        pitchArray.removeAll()
     }
 
     func fillText(){
@@ -84,7 +92,6 @@ class RecordingViewController: UIViewController, PitchEngineDelegate {
                         if randomNumber < dict.count {
                             textView.text = dict[randomNumber]
                         }
-                        print(object)
                     } else {
                         print("no text object in json")
                     }

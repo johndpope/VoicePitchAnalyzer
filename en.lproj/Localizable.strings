@@ -9,7 +9,7 @@
 "Androgynous\nRange" = "Androgynous\nRange";
 "Recording" = "Recording";
 "About" = "About";
-"AboutText" = "Voice Pitch Analyzer\nVersion:%@\n\nBased on the original %@ \n\nCopyright © Carola Nitz";
+"AboutText" = "Voice Pitch Analyzer\nVersion:%@\n\nBased on the original %@";
 "No Samples" = "Not enough samples";
 "No Samples description" = "We couldn't record enough speaking samples from you. Please try again";
 
