@@ -52,9 +52,9 @@ class RangeView: UIView {
 
         NSLayoutConstraint.activate([
             femaleLabel.rightAnchor.constraint(equalTo: self.rightAnchor),
-            femaleLabel.topAnchor.constraint(equalTo: self.topAnchor),
+            femaleLabel.topAnchor.constraint(equalTo: self.centerYAnchor, constant: -100),
             maleLabel.rightAnchor.constraint(equalTo: self.rightAnchor),
-            maleLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            maleLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant:100),
             androgynousLabel.rightAnchor.constraint(equalTo: self.rightAnchor),
             androgynousLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
             ])
@@ -62,43 +62,50 @@ class RangeView: UIView {
 
     override func draw(_ rect: CGRect) {
 
-        let context = UIGraphicsGetCurrentContext();
+        let currentContext = UIGraphicsGetCurrentContext();
+
+        guard let context = currentContext else {
+            return
+        }
         self.clearsContextBeforeDrawing = true
-        context!.setFillColor(UIColor.white.cgColor)
-        context!.fill(bounds);
+        context.setFillColor(UIColor.white.cgColor)
+        context.fill(bounds);
+
+        let height = bounds.height;
 
         //femaleRange goes from 165hz - 255. The entire screen should show 340HZ
         //therefor 165 is 48.f percent of the screen and 255 is 75 percent
         //since we draw this upside down I have to take 1 -
 
-
-        let femaleRangeStart = bounds.height * (1 - 0.4852)
-        let femaleRangeEnd = bounds.height * (1 - 0.75)
-        let femaleRange = CGRect(x:0, y:femaleRangeStart, width: bounds.width, height: femaleRangeEnd - femaleRangeStart);
-        context!.setFillColor(red: 147.0/255.0, green: 112.0/255.0, blue: 219.0/255.0, alpha: 0.5);
-        context!.fill(femaleRange);
+        let upperFemaleRange = height * (1 - 0.4852)
+        let lowerFemaleRange = height * (1 - 0.75)
+        let femaleRange = CGRect(x:0, y:lowerFemaleRange, width: bounds.width, height:upperFemaleRange - lowerFemaleRange);
+        context.setFillColor(red: 147.0/255.0, green: 112.0/255.0, blue: 219.0/255.0, alpha: 0.5);
+        context.fill(femaleRange);
         //male range 85 to 180
-        let maleRangeStart = bounds.height * (1 - 0.25)
-        let maleRangeEnd = bounds.height * (1 - 0.5294)
+        let upperMaleRange = height * (1 - 0.25)
+        let lowerMaleRange = height * (1 - 0.5294)
 
-        let maleRange = CGRect(x:0, y:maleRangeStart, width: bounds.width, height: maleRangeEnd - maleRangeStart);
-        context!.setFillColor(red: 230.0/255.0, green: 230.0/255.0, blue: 250.0/255.0, alpha: 0.5);
-        context!.fill(maleRange);
-
+        let maleRange = CGRect(x:0, y:lowerMaleRange, width: bounds.width, height: upperMaleRange - lowerMaleRange);
+        context.setFillColor(red: 230.0/255.0, green: 230.0/255.0, blue: 250.0/255.0, alpha: 0.5);
+        context.fill(maleRange);
+        
         let yourmin = (1.0 - min/340)
         let yourmax = (1.0 - max/340)
 
-        let yourRangeStart = bounds.height * CGFloat(yourmin)
-        let yourRangeEnd = bounds.height * CGFloat(yourmax)
-        let yourRange = CGRect(x:bounds.width/2 - 25.0, y:yourRangeStart, width: 50, height: yourRangeEnd - yourRangeStart);
-        context!.setFillColor(red: 147.0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 0.5);
-        context!.fill(yourRange);
+        let recordingUpperRange = height * CGFloat(yourmin)
+        let recordingLowerRange = height * CGFloat(yourmax)
+        let yourRange = CGRect(x:bounds.width/2 - 25.0, y:recordingLowerRange, width: 50, height:recordingUpperRange - recordingLowerRange);
 
-        let middleOfRange = yourRangeStart + (yourRangeEnd - yourRangeStart)/2
+        let path = UIBezierPath(roundedRect: yourRange, cornerRadius: 20)
+        context.setFillColor(red: 147.0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 0.5);
+        context.addPath(path.cgPath)
+        context.fillPath()
+
+        let middleOfRange = recordingUpperRange + (recordingLowerRange - recordingUpperRange)/2
         let middleOfyourRange = CGRect(x:bounds.width/2 - 25.0, y:middleOfRange, width: 50, height: 2);
-        context!.setFillColor(red: 147.0/255.0, green: 147/255.0, blue: 147/255.0, alpha: 1);
-        context!.fill(middleOfyourRange);
-
+        context.setFillColor(red: 147.0/255.0, green: 147/255.0, blue: 147/255.0, alpha: 1);
+        context.fill(middleOfyourRange);
 
     }
 }

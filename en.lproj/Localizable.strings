@@ -4,8 +4,8 @@
 "Record" = "Record";
 "Cancel" = "Cancel";
 "Stop" = "Stop";
-"Female\nRange" = "Female\nRange";
-"Male\nRange" = "Male\nRange";
+"Female\nRange" = "Female Range\n(165hz - 255hz)";
+"Male\nRange" = "Male Range\n(85hz - 180hz)";
 "Androgynous\nRange" = "Androgynous\nRange";
 "Recording" = "Recording";
 "About" = "About";

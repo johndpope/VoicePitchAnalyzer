@@ -24,10 +24,10 @@ class RecordingDetailViewController: UIViewController {
             view.addSubview(rangeView)
 
             let constraints = [
-                rangeView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-                rangeView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-                rangeView.widthAnchor.constraint(equalTo: view.widthAnchor),
-                rangeView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.8)
+                rangeView.leftAnchor.constraint(equalTo: view.leftAnchor),
+                rangeView.rightAnchor.constraint(equalTo: view.rightAnchor),
+                rangeView.topAnchor.constraint(equalTo: self.topLayoutGuide.bottomAnchor),
+                rangeView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
             ]
 
             NSLayoutConstraint.activate(constraints)

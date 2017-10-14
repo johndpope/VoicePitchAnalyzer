@@ -4,8 +4,8 @@
 "Record" = "Aufnehmen";
 "Caccel" = "Abbrechen";
 "Stop" = "Stop";
-"Female\nRange" = "Weibliche\nSpanne";
-"Male\nRange" = "Männliche\nSpanne";
+"Female\nRange" = "Weibliche Spanne\n(165hz - 255hz)";
+"Male\nRange" = "Männliche Spanne\n(85hz - 180hz)";
 "Androgynous\nRange" = "Androgyne\nSpanne";
 "Recording" = "Aufnehmen";
 "About" = "Über";
