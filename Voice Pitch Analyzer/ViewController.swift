@@ -15,9 +15,9 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         welcomeText.text = NSLocalizedString("Welcome", comment: "")
-        nextButton.setTitle(NSLocalizedString("Next", comment: ""), for: .normal)
+        nextButton.setTitle(NSLocalizedString("Gotit", comment: ""), for: .normal)
         nextButton.addTarget(self, action: #selector(ViewController.showNextScreen), for: .touchUpInside)
     }
 
