@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13178.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13156.2"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -32,15 +33,24 @@
                                 <rect key="frame" x="164.5" y="577" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AppIconBig" translatesAutoresizingMaskIntoConstraints="NO" id="nRS-EM-nuK">
+                                <rect key="frame" x="112" y="153" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="6g0-5G-VYH"/>
+                                    <constraint firstAttribute="width" secondItem="nRS-EM-nuK" secondAttribute="height" multiplier="1:1" id="Gtk-0Q-hAc"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="WMi-Wz-qCm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" id="4so-Wd-mtn"/>
+                            <constraint firstItem="WMi-Wz-qCm" firstAttribute="top" secondItem="nRS-EM-nuK" secondAttribute="bottom" constant="20" id="HPG-VB-QOS"/>
                             <constraint firstItem="WMi-Wz-qCm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Irc-6X-R6m"/>
                             <constraint firstItem="WMi-Wz-qCm" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="YMO-HV-xQo"/>
                             <constraint firstItem="0DU-Sc-oja" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cGl-gD-6Rs"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="WMi-Wz-qCm" secondAttribute="trailing" constant="8" id="eg0-kb-etE"/>
+                            <constraint firstAttribute="trailingMargin" relation="lessThanOrEqual" secondItem="WMi-Wz-qCm" secondAttribute="trailing" constant="8" id="eg0-kb-etE"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="0DU-Sc-oja" secondAttribute="bottom" constant="60" id="koJ-TP-xyU"/>
+                            <constraint firstItem="nRS-EM-nuK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mdM-cE-dul"/>
                         </constraints>
                     </view>
                     <connections>
@@ -50,6 +60,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="31.934032983508249"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="AppIconBig" width="1024" height="1024"/>
+    </resources>
 </document>

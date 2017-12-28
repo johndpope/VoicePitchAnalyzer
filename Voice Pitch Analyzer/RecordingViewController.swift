@@ -14,7 +14,8 @@ class RecordingViewController: UIViewController, PitchEngineDelegate {
 
     var recordButton = UIButton(type: .custom)
     var textView = UITextView()
-    var aboutButton = UIButton(type: UIButtonType.infoDark)
+    var aboutButton = UIButton(type: .custom)
+    var helpButton = UIButton(type: .custom)
     var pitchArray:Array<Double> = Array()
 
     let firstAppearanceKey = "firstAppearance"
@@ -36,18 +37,31 @@ class RecordingViewController: UIViewController, PitchEngineDelegate {
     func presentIntroIfNeeded(){
         let firstTime = UserDefaults.standard.bool(forKey: firstAppearanceKey)
         if !firstTime {
-            let mainsb = UIStoryboard(name: "Main", bundle: nil)
-            let introScreen = mainsb.instantiateInitialViewController()
-            present(introScreen!, animated: true) {}
+            presentInfo()
             UserDefaults.standard.set(true, forKey: firstAppearanceKey)
         }
+    }
+
+    @objc func presentInfo(){
+        let mainsb = UIStoryboard(name: "Main", bundle: nil)
+        let introScreen = mainsb.instantiateInitialViewController()
+        navigationController?.present(introScreen!, animated: true) {}
     }
 
     func setupSubviews(){
         view.backgroundColor = .white
         navigationItem.title = NSLocalizedString("Recording", comment: "")
-        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: aboutButton)
+
+        helpButton.setImage(UIImage(named: "icon-questionmark"), for: .normal)
+        helpButton.translatesAutoresizingMaskIntoConstraints = false
+        aboutButton.translatesAutoresizingMaskIntoConstraints = false
+        aboutButton.setImage(UIImage(named: "icon-info"), for: .normal)
+        helpButton.tintColor = .white
         aboutButton.addTarget(self, action: #selector(RecordingViewController.showAboutScreen), for: .touchUpInside)
+        helpButton.addTarget(self, action: #selector(RecordingViewController.presentInfo), for: .touchUpInside)
+
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: aboutButton)
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: helpButton)
 
         recordButton.setTitle(NSLocalizedString("Record", comment: ""), for: .normal)
         recordButton.addTarget(self, action: #selector(RecordingViewController.startRecording), for: .touchUpInside)
@@ -112,7 +126,11 @@ class RecordingViewController: UIViewController, PitchEngineDelegate {
             textView.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor),
             textView.leftAnchor.constraint(equalTo: view.leftAnchor),
             textView.rightAnchor.constraint(equalTo: view.rightAnchor),
-            textView.bottomAnchor.constraint(equalTo: recordButton.topAnchor),
+            textView.bottomAnchor.constraint(equalTo: recordButton.topAnchor, constant:-8),
+            helpButton.widthAnchor.constraint(equalToConstant: 22),
+            helpButton.heightAnchor.constraint(equalToConstant: 22),
+            aboutButton.widthAnchor.constraint(equalToConstant: 22),
+            aboutButton.heightAnchor.constraint(equalToConstant: 22),
             recordButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant:-8),
             recordButton.heightAnchor.constraint(equalToConstant:44),
             recordButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -10),
@@ -120,7 +138,7 @@ class RecordingViewController: UIViewController, PitchEngineDelegate {
         ])
     }
 
-    func startRecording() {
+    @objc func startRecording() {
 
         recordButton.removeTarget(self, action: nil, for: .touchUpInside)
         recordButton.addTarget(self, action: #selector(RecordingViewController.stopRecording), for: .touchUpInside)
@@ -130,7 +148,7 @@ class RecordingViewController: UIViewController, PitchEngineDelegate {
     }
 
    
-    func stopRecording() {
+    @objc func stopRecording() {
         recordButton.removeTarget(self, action: nil, for: .touchUpInside)
         recordButton.addTarget(self, action: #selector(RecordingViewController.startRecording), for: .touchUpInside)
         recordButton.setTitle(NSLocalizedString("Record", comment: ""), for: .normal)
@@ -148,7 +166,7 @@ class RecordingViewController: UIViewController, PitchEngineDelegate {
         }
     }
 
-    func showAboutScreen() {
+    @objc func showAboutScreen() {
         let aboutvc = AboutViewController()
         let navigationvc = UINavigationController(rootViewController: aboutvc)
         present(navigationvc, animated: true, completion: nil)
@@ -181,4 +199,5 @@ class RecordingViewController: UIViewController, PitchEngineDelegate {
         UIGraphicsEndImageContext()
         return img!
     }
+
 }

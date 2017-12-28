@@ -26,9 +26,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func setupAppearance(){
-        var dict = [String:Any]()
+        var dict = [NSAttributedStringKey:Any]()
 
-        dict = [NSForegroundColorAttributeName : UIColor.white]
+        dict = [NSAttributedStringKey.foregroundColor : UIColor.white]
 
         UIBarButtonItem.appearance().setTitleTextAttributes(dict, for: .normal)
         UINavigationBar.appearance().barTintColor = .vpapurple

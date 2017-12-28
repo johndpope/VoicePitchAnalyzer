@@ -26,7 +26,7 @@ class AboutViewController: UIViewController, UITextViewDelegate
         let paragraph = NSMutableParagraphStyle()
         paragraph.alignment = .center
 
-        let attributes: [String : Any] = [NSParagraphStyleAttributeName: paragraph, NSFontAttributeName:UIFont.systemFont(ofSize: 15)]
+        let attributes: [NSAttributedStringKey : Any] = [NSAttributedStringKey.paragraphStyle: paragraph, NSAttributedStringKey.font: UIFont.systemFont(ofSize: 15)]
 
         let version = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String
         let appname = "Voice-Pitch-Analyzer"
@@ -51,7 +51,7 @@ class AboutViewController: UIViewController, UITextViewDelegate
         return true
     }
 
-    func close() {
+    @objc func close() {
         dismiss(animated: true) {}
     }
 }

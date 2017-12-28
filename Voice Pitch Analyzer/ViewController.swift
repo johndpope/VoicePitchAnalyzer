@@ -21,7 +21,7 @@ class ViewController: UIViewController {
         nextButton.addTarget(self, action: #selector(ViewController.showNextScreen), for: .touchUpInside)
     }
 
-    func showNextScreen() {
+    @objc func showNextScreen() {
         dismiss(animated: true) {}
     }
 
