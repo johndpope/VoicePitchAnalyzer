@@ -90,7 +90,8 @@ class RecordingViewController: UIViewController, PitchEngineDelegate {
     func fillText(){
         do {
             var lang = NSLocale.preferredLanguages.first
-            lang = lang!.substring(to: lang!.index(lang!.startIndex, offsetBy: 2))
+            let range = ..<lang!.index(lang!.startIndex, offsetBy: 2)
+            lang = String(lang![range])
             if (lang != "de" && lang != "en" && lang != "it" && lang != "pt") {
                 lang = "en"
             }
