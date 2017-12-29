@@ -123,6 +123,12 @@ class RecordingViewController: UIViewController, PitchEngineDelegate {
 
     func setupConstraints()
     {
+        let bottomConstraint:NSLayoutConstraint
+        if #available(iOS 11.0, *) {
+            bottomConstraint = recordButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant:-8)
+        } else {
+            bottomConstraint = recordButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant:-8)
+        }
         NSLayoutConstraint.activate( [
             textView.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor),
             textView.leftAnchor.constraint(equalTo: view.leftAnchor),
@@ -132,11 +138,11 @@ class RecordingViewController: UIViewController, PitchEngineDelegate {
             helpButton.heightAnchor.constraint(equalToConstant: 22),
             aboutButton.widthAnchor.constraint(equalToConstant: 22),
             aboutButton.heightAnchor.constraint(equalToConstant: 22),
-            recordButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant:-8),
+            bottomConstraint,
             recordButton.heightAnchor.constraint(equalToConstant:44),
             recordButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -10),
             recordButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant:10),
-        ])
+            ])
     }
 
     @objc func startRecording() {
