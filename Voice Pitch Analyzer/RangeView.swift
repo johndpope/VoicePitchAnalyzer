@@ -80,14 +80,14 @@ class RangeView: UIView {
         let upperFemaleRange = height * (1 - 0.4852)
         let lowerFemaleRange = height * (1 - 0.75)
         let femaleRange = CGRect(x:0, y:lowerFemaleRange, width: bounds.width, height:upperFemaleRange - lowerFemaleRange);
-        context.setFillColor(red: 147.0/255.0, green: 112.0/255.0, blue: 219.0/255.0, alpha: 0.5);
+        context.setFillColor(red: 147.0/255.0, green: 112.0/255.0, blue: 219.0/255.0, alpha: 0.6);
         context.fill(femaleRange);
         //male range 85 to 180
         let upperMaleRange = height * (1 - 0.25)
         let lowerMaleRange = height * (1 - 0.5294)
 
         let maleRange = CGRect(x:0, y:lowerMaleRange, width: bounds.width, height: upperMaleRange - lowerMaleRange);
-        context.setFillColor(red: 230.0/255.0, green: 230.0/255.0, blue: 250.0/255.0, alpha: 0.5);
+        context.setFillColor(red: 230.0/255.0, green: 230.0/255.0, blue: 255.0/255.0, alpha: 0.7);
         context.fill(maleRange);
         
         let yourmin = (1.0 - min/340)
@@ -98,12 +98,12 @@ class RangeView: UIView {
         let yourRange = CGRect(x:bounds.width/2 - 25.0, y:recordingLowerRange, width: 50, height:recordingUpperRange - recordingLowerRange);
 
         let path = UIBezierPath(roundedRect: yourRange, cornerRadius: 20)
-        context.setFillColor(red: 147.0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 0.5);
+        context.setFillColor(red: 147.0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 0.7);
         context.addPath(path.cgPath)
         context.fillPath()
 
         let middleOfRange = recordingUpperRange + (recordingLowerRange - recordingUpperRange)/2
-        let middleOfyourRange = CGRect(x:bounds.width/2 - 25.0, y:middleOfRange, width: 50, height: 2);
+        let middleOfyourRange = CGRect(x:bounds.width/2 - 25.0, y:middleOfRange - 1.5, width: 50, height: 3);
         context.setFillColor(red: 147.0/255.0, green: 147/255.0, blue: 147/255.0, alpha: 1);
         context.fill(middleOfyourRange);
 
