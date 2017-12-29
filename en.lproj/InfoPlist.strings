@@ -1,2 +1,3 @@
 
-"NSMicrophoneUsageDescription" = "In order to analyze your voice we need to access the Microfone";
+"NSMicrophoneUsageDescription" = "In order to analyze your voice we need to access the microfone";
+"NSCameraUsageDescription" = "In order to analyze your voice we need to access to camera";

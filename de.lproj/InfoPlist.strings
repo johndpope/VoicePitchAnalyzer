@@ -1,2 +1,3 @@
 
 "NSMicrophoneUsageDescription" = "Um deine Stimme zu analysieren brauchen wir die Erlaubnis für dein Mikrophone";
+"NSCameraUsageDescription" = "Um deine Stimme zu analysieren brauchen wir Zugriff auf die Kamera";
